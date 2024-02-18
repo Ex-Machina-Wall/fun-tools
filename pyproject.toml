@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ex-wall-fun-tools"
+version = "0.1.0"
+description = ""
+authors = ["Trevor O'Leary <git@trevoroleary.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.2.0"
+opencv-python = "^4.9.0.80"
+mss = "^9.0.1"
+numpy = "^1.26.4"
+ex-wall-frame-transmitter = {git = "https://github.com/Ex-Machina-Wall/frame-transmitter.git"}
+python-decouple = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
