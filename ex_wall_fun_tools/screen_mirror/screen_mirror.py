@@ -7,7 +7,7 @@ import logging
 
 from ex_wall_fun_tools.screen_mirror.capture_screen import capture_screenshot
 
-logging.basicConfig(level=logging.CRITICAL)
+# logging.basicConfig(level=logging.DEBUG)
 
 
 def get_frame() -> np.array:
@@ -17,7 +17,7 @@ def get_frame() -> np.array:
     image = capture_screenshot()
 
     converter = ImageEnhance.Color(image)
-    image = converter.enhance(3)
+    # image = converter.enhance(3)
     frame = image.resize((WIDTH, HEIGHT))
     image_array = np.array(frame)
     return image_array
@@ -29,8 +29,8 @@ def main():
     transmitter.start()
     cont = True
     while cont:
-        transmitter.send_numpy_frame(get_frame())
-        time.sleep(1 / 80)
+        transmitter.send_numpy_frame(pid_gain=30, np_frame=get_frame())
+        time.sleep(1 / 30)
     transmitter.stop()
 
 

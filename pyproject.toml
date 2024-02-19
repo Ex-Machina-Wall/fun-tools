@@ -6,7 +6,7 @@ authors = ["Trevor O'Leary <git@trevoroleary.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9, ^3.10, ^3.11"
 pillow = "^10.2.0"
 opencv-python = "^4.9.0.80"
 mss = "^9.0.1"
